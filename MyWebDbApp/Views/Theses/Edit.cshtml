@@ -1,0 +1,190 @@
+﻿@model ThesisDbApp.Models.Thesis
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+<form asp-action="Edit">
+<h4>Thesis</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+      <style>
+      table, th, td {
+      padding: 10px;
+      border: 1px solid black; 
+      border-collapse: collapse;
+      }
+    </style>
+    <h4>Thema: </h4>
+    <method="post" name="" action="">
+    <label for="title"></label>
+    <input id="title" name="title" type="text" placeholder="Titel" required="required" autofocus="autofocus"/></br>
+        <label for="description"></label>
+    <textarea id="description" name="description" type="text" placeholder="Beschreibung" required="required" autofocus="autofocus"/></br>
+      <method="post" name="" action="">
+    <label for="vorname"></label>
+    <input id="vorname" name="vorname" type="text" placeholder="Vorname Betreuer" required="required" autofocus="autofocus"/>
+	<method="post" name="" action=""></br>
+    <label for="nachname"></label>
+    <input id="nachname" name="nachname" type="text" placeholder="Nachname Betreuer" required="required" autofocus="autofocus"/>
+	<method="post" name="" action=""></br>
+    <label for="chair"></label>
+    <input id="chair" name="chair" type="text" placeholder="Lehrstuhl" required="required" autofocus="autofocus"/></br>
+    <input type="radio" name="radio" value="1"/>Bachelor
+          <input type="radio" name="radio" value="2"/>Master</br>
+    <h4>Bearbeitung: </h4>
+	<method="post" name="" action="">
+      <input type="checkbox" name="status[]" value ="1"/>Verfügabr</br>
+      <input type="checkbox" name="status[]" value ="2"/>Zugeteilt</br>
+      <input type="checkbox" name="status[]" value ="3"/>Abgelegt</br>
+      <input type="checkbox" name="status[]" value ="4"/>Eingereicht</br>
+      <input type="checkbox" name="status[]" value ="5"/>Benotet</br>
+      <label for="description"></label>
+      <input id="StudentName" name="StudentName" type="text" placeholder="Name des Studenten" required="required" autofocus="autofocus"/></br>
+      <method="post" name="" action="">
+      <label for="StudentId"></label>
+      <input id="StudentId" name="StudentId" type="text" placeholder="Matrikelnummer" required="required" autofocus="autofocus"/>
+	  <method="post" name="" action=""></br>
+      <label for="StudentEmail"></label>
+      <input id="StudentEmail" name="Studentemail" type="text" placeholder="Email des Studenten" required="required" autofocus="autofocus"/>
+	  <method="post" name="" action=""></br>
+          <input type="radio" name="Studiengang" value="1"/>Bachelor Wirtschaftsinformatik
+          <input type="radio" name="Studiengang" value="2"/>Bachelor Wirtschaftswissenschaften
+                  <input type="radio" name="Studiengang" value="3"/>Master Buisness Management
+          <input type="radio" name="Studiengang" value="4"/>Master Information Systems</br>
+      <label for="registraion"></label>
+      <input id="registration" name="registration" type="text" placeholder="Anmeldedatum" required="required" autofocus="autofocus"/></br>
+      <label for="filing"></label>
+      <input id="filing" name="filing" type="text" placeholder="Abgabedatum" required="required" autofocus="autofocus"/></br>
+
+        <table>
+         <h4>Gutachten:</h4>
+  
+                  <label for="summary"></label>
+        <textarea id="summary" name="summary" type="text" placeholder="Zusammenfassung" required="required" autofocus="autofocus"/></br>
+                <label for="strengths"></label>
+        <textarea id="strengths" name="strengths" type="text" placeholder="Stärken" required="required" autofocus="autofocus"/></br>
+                <label for="weakness"></label>
+        <textarea id="weakness" name="weakness" type="text" placeholder="Schwächen" required="required" autofocus="autofocus"/></br>
+                <label for="evaluation"></label>
+        <textarea id="evaluation" name="evaluation" type="text" placeholder="Evalution" required="required" autofocus="autofocus"/></br>
+          <tr>
+              <th>Kriterium</th>
+              <th>Bewertung</th>
+              <th>Gewichtung</th>
+          </tr>
+        <tr>
+              <td>Inhalt</td>
+              <td><input type="radio" name="inhalt" value="1"/>1
+                  <input type="radio" name="inhalt" value="2"/>2
+                  <input type="radio" name="inhalt" value="3"/>3
+                  <input type="radio" name="inhalt" value="4"/>4
+                  <input type="radio" name="inhalt" value="5"/>5</td>
+              <td><label asp-for="ContentWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Gestaltung</td>
+              <td><input type="radio" name="gestaltung" value="1"/>1
+                  <input type="radio" name="gestaltung" value="2"/>2
+                  <input type="radio" name="gestaltung" value="3"/>3
+                  <input type="radio" name="gestaltung" value="4"/>4
+                  <input type="radio" name="gestaltung" value="5"/>5</td>
+              <td><label asp-for="LayoutWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Aufbau</td>
+              <td><input type="radio" name="aufbau" value="1"/>1
+                  <input type="radio" name="aufbau" value="2"/>2
+                  <input type="radio" name="aufbau" value="3"/>3
+                  <input type="radio" name="aufbau" value="4"/>4
+                  <input type="radio" name="aufbau" value="5"/>5</td>
+              <td><label asp-for="StructureWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Sprache</td>
+              <td><input type="radio" name="sprache" value="1"/>1
+                  <input type="radio" name="sprache" value="2"/>2
+                  <input type="radio" name="sprache" value="3"/>3
+                  <input type="radio" name="sprache" value="4"/>4
+                  <input type="radio" name="sprache" value="5"/>5</td>
+              <td><label asp-for="StyleWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Literatur</d>
+              <td><input type="radio" name="literatur" value="1"/>1
+                  <input type="radio" name="literatur" value="2"/>2
+                  <input type="radio" name="literatur" value="3"/>3
+                  <input type="radio" name="literatur" value="4"/>4
+                  <input type="radio" name="literatur" value="5"/>5</td>
+              <td><label asp-for="LiteratureWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Schwierigkeitsgrad</td>
+              <td><input type="radio" name="schwierigkeitsgrad" value="1"/>1
+                  <input type="radio" name="schwierigkeitsgrad" value="2"/>2
+                  <input type="radio" name="schwierigkeitsgrad" value="3"/>3
+                  <input type="radio" name="schwierigkeitsgrad" value="4"/>4
+                  <input type="radio" name="schwierigkeitsgrad" value="5"/>5</td>
+              <td><label asp-for="DifficultyWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Neuigkeitsgrad</td>
+              <td><input type="radio" name="neuigkeitsgrad" value="1"/>1
+                  <input type="radio" name="neuigkeitsgrad" value="2"/>2
+                  <input type="radio" name="neuigkeitsgrad" value="3"/>3
+                  <input type="radio" name="neuigkeitsgrad" value="4"/>4
+                  <input type="radio" name="neuigkeitsgrad" value="5"/>5</td>
+              <td><label asp-for="NoveltyWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td>Themenerfassung</td>
+              <td><input type="radio" name="themenerfassung" value="1"/>1
+                  <input type="radio" name="themenerfassung" value="2"/>2
+                  <input type="radio" name="themenerfassung" value="3"/>3
+                  <input type="radio" name="themenerfassung" value="4"/>4
+                  <input type="radio" name="themenerfassung" value="5"/>5</td>
+              <td><label asp-for="RichnessWt" class="control-label"></label><Input type=number min=0 max=100></td>
+          </tr>
+        <tr>
+              <td></td>
+              <td></td>
+              <td><input id="Rechnen" type="text" class="form-control" readonly></td>
+          </tr>
+        </table>
+        <br/>
+        <button type="submit">Notenvorschlag berechnen</button>
+            </div>
+        </div>
+
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+        </form>
+
+    @section Scripts {
+    <scripts> 
+        document.getElementById("Rechnen"); 
+
+        function berechnen() {
+            var a = document.getElementById("ContentWt").value;
+            var b = document.getElementById("LayoutWt").value;
+            var c = document.getElementById("StyleWt").value;
+            var d = document.getElementById("StructureWt").value;
+            var e = document.getElementById("StyleWt").value;
+            var f = document.getElementById("LiteratureWt").value;
+            var g = document.getElementById("DifficultyWt").value;
+            var h = document.getElementById("NoveltyWt").value;
+            var i = document.getElementById("RichnessWt").value;
+            var res;
+            
+            res = Number(a) + Number(b) + Number(c) + Number(d) + Number(e) + Number(f) + Number(g) + Number(h) + Number(i); 
+            document.getElementById("Ergebnis").value = res;
+        };
+    </scripts>
+    }
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
